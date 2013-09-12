@@ -1,8 +1,1 @@
-export HUBOT_CAMPFIRE_ACCOUNT="activefaith"
-export HUBOT_CAMPFIRE_TOKEN="8a4c4c3cbfc6b279c6f2f533769e3310ea763f58"
-export HUBOT_CAMPFIRE_ROOMS="554594,554655"
-export PORT='5555'
-export HUBOT_NEWRELIC_ACCOUNT_ID="16978"
-export HUBOT_NEWRELIC_APP_ID="1214186"
-export HUBOT_NEWRELIC_API_KEY="057111347172b83fc72ba9503a2ff58f29dc47a23f7b711"
-PYTHON=/usr/bin/python26 nohup /opt/hubot/bin/hubot --name hubot --adapter campfire &
+nohup /opt/hubot/bin/hubot --name hubot --adapter campfire &
