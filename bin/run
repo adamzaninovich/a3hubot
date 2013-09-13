@@ -1,8 +1,6 @@
-if [[ $(screen -ls|grep [0-9].hubot|wc -l) == "1" ]]; then
-  echo "hubot is already running"
-  echo 'run `screen -r hubot` to connect'
-else
-  echo "starting hubot"
-  screen -t hubot -d -m foreman start hubot -f ~/hubot/Procfile
-  echo "hubot is running"
-fi
+#!/bin/sh
+
+set -e
+
+cd /home/hubot/hubot && git pull origin master && bin/hubot --name hubot --adapter campfire
+
