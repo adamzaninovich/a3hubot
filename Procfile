@@ -1,1 +1,1 @@
-hubot: bin/hubot --name hubot --adapter campfire
+hubot: bin/run
