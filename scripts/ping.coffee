@@ -18,8 +18,9 @@ module.exports = (robot) ->
     msg.send "Server time is: #{new Date()}"
 
   robot.respond /DIE$/i, (msg) ->
-    msg.send "Goodbye, cruel world.", ->
-      process.exit 0
+    msg.send "http://i.imgur.com/DgczUtV.png"
+    #msg.send "Goodbye, cruel world.", ->
+    #  process.exit 0
 
   robot.respond /update/i, (msg) ->
     msg.send "Updating my bad self...", ->
