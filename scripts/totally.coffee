@@ -5,5 +5,4 @@
 
 module.exports = (robot) ->
   robot.hear /\btotally\b/i, (msg) ->
-    msg.send "tooooootallly"
-    msg.send "http://i.imgur.com/ulvD5Le.gif"
+    msg.send "http://i.imgur.com/XuTdELg.jpg"
