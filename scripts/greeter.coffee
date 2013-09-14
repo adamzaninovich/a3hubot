@@ -1,5 +1,5 @@
-enterReplies = ['Hi', 'Target Acquired', 'Firing', 'Hello friend.', 'Gotcha', 'I see you']
-leaveReplies = ['Was it something I said?', 'Are you still there?', 'Target lost', 'Searching']
+enterReplies = ['Target Acquired', 'Hello friend.', 'Sup homes', 'Hay girl haaay', 'Welcome to the... DANGERZONE']
+leaveReplies = ['Was it something I said?', 'Target lost', 'Toodles', "I didn't like them anyway"]
 
 module.exports = (robot) ->
   robot.enter (msg) ->
