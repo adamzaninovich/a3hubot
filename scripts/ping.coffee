@@ -21,3 +21,5 @@ module.exports = (robot) ->
     msg.send "Goodbye, cruel world."
     process.exit 0
 
+  robot.respond /(HELLO|HI)/i, (msg) ->
+    msg.send "hi there!"
