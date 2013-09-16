@@ -2,6 +2,7 @@ enterReplies = ['oh hai {msg.message.user.name}', 'Hello {msg.message.user.name}
 leaveReplies = ['Was it something I said?', 'Toodles {msg.message.user.name}', "I didn't like them anyway"]
 
 module.exports = (robot) ->
+  robot.messageRoom 'A3', "I'm back bitches"
   robot.enter (msg) ->
     msg.send msg.random enterReplies
   robot.leave (msg) ->
