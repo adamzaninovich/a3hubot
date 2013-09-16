@@ -4,6 +4,9 @@
 # Commands:
 
 module.exports = (robot) ->
+  robot.hear /testing/i. (msg) ->
+    robot.messageRoom 'A3', "skaljdhfgksajhgdf"
+
   robot.hear /\bdemeter\b/i, (msg) ->
     msg.send "http://i.imgur.com/Z0jvLNm.jpg"
 
