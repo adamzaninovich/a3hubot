@@ -9,9 +9,5 @@ leave_replies = ["Was it something I said?", "Toodles", "I didn't like them anyw
 
 module.exports = (robot) ->
   robot.messageRoom 554655, random boot_messages
-
-  robot.enter (msg) ->
-    msg.send msg.random enter_replies
-
-  robot.leave (msg) ->
-    msg.send msg.random leave_replies
+  robot.enter (msg) -> msg.send msg.random enter_replies
+  robot.leave (msg) -> msg.send msg.random leave_replies
