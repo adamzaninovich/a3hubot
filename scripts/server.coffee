@@ -5,7 +5,7 @@ module.exports = (robot) ->
     for commit in data.commits
       do (commit) ->
         message += "#{commit.author.name} pushed \"#{commit.message}\"\n"
-    robot.messageRoom 554655, "Oh sheesh y'all, time to update my bad self", message, "brb :two_hearts:", ->
+    robot.messageRoom 554655, "Oh sheesh y'all, time to update my bad self", message, ->
       process.exit 0
 
   robot.router.get '/say', (req, res) ->
