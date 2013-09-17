@@ -3,7 +3,7 @@ module.exports = (robot) ->
     data = JSON.parse req.body.payload
     last_commit = data.commits.slice(-1).pop()
     message = "#{last_commit.author.name} pushed \"#{last_commit.message}\""
-    robot.messageRoom 554655, message, "Imma update now kbai" ->
+    robot.messageRoom 554655, message, "Imma update now kbai", ->
       process.exit 0
 
   robot.router.get '/say', (req, res) ->
