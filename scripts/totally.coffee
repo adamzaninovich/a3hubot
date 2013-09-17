@@ -4,5 +4,5 @@
 # Commands:
 
 module.exports = (robot) ->
-  robot.hear /\btotally\b/i, (msg) ->
+  robot.hear /\bto+tally\b/i, (msg) ->
     msg.send "http://i.imgur.com/XuTdELg.jpg"
