@@ -4,7 +4,7 @@ module.exports = (robot) ->
     message = ""
     for commit in data.commits
       do (commit) ->
-        message += "#{commit.author.name} pushed \"#{last_commit.message}\"\n"
+        message += "#{commit.author.name} pushed \"#{commit.message}\"\n"
     robot.send message, "Imma get me summa that!", ->
       process.exit 0
 
