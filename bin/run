@@ -2,5 +2,5 @@
 
 set -e
 
-cd /home/hubot/hubot && git pull origin master && bin/hubot --name hubot --adapter campfire
+cd /home/hubot/hubot && git pull origin master && bin/hubot --name hubot --adapter campfire --alias
 
