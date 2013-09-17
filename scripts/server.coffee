@@ -1,6 +1,5 @@
 module.exports = (robot) ->
-  robot.router.get '/hubot/say/:stuff', (req, res) ->
-    stuff = req.params.stuff
+  robot.router.get '/', (req, res) ->
     #data = JSON.parse req.body.payload
-    robot.messageRoom 554655, "#{stuff}"
+    robot.messageRoom 554655, "hello from the web"
     res.end 'OK'
