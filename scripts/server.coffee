@@ -1,12 +1,11 @@
 module.exports = (robot) ->
   robot.router.post '/update', (req, res) ->
     data = JSON.parse req.body.payload
-    last_commit = data.commits.slice(-1).pop()
-    message = "#{last_commit.author.name} pushed \"#{last_commit.message}\""
-    robot.messageRoom 554655, message, "Imma update now kbai", ->
+    message = ""
+    for commit in data.commits do (commit) -> message += "#{commit.author.name} pushed \"#{last_commit.message}\"\n"
+    robot.send message, "Imma get me summa that!", ->
       process.exit 0
 
   robot.router.get '/say', (req, res) ->
-    data = req.query.message
-    robot.messageRoom 554655, "#{data}"
-    res.end 'OK'
+    robot.send "#{req.query.message}"
+    res.end "#{req.query.message}"
