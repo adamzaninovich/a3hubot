@@ -23,5 +23,8 @@ module.exports = (robot) ->
     #  process.exit 0
 
   robot.respond /update/i, (msg) ->
-    msg.send "Updating my bad self...", ->
-      process.exit 0
+    if msg.message.user.id is '1423024'
+      msg.send "Updating my bad self...", ->
+        process.exit 0
+    else
+      msg.send "http://i.imgur.com/DgczUtV.png"
