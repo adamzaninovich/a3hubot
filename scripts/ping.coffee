@@ -9,7 +9,7 @@
 
 module.exports = (robot) ->
   robot.respond /ping$/i, (msg) ->
-    msg.send "PONG yo"
+    msg.send "PONG"
 
   robot.respond /echo (.*)$/i, (msg) ->
     msg.send msg.match[1]
@@ -22,6 +22,6 @@ module.exports = (robot) ->
     #msg.send "Goodbye, cruel world.", ->
     #  process.exit 0
 
-  #robot.respond /update/i, (msg) ->
-  #  msg.send "Updating my bad self...", ->
-  #    process.exit 0
+  robot.respond /update/i, (msg) ->
+    msg.send "Updating my bad self...", ->
+      process.exit 0
