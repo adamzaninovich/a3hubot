@@ -4,7 +4,7 @@
 # Commands:
 
 module.exports = (robot) ->
-  robot.hear /testing/i. (msg) ->
+  robot.hear /testing/i, (msg) ->
     robot.messageRoom 'A3', "skaljdhfgksajhgdf"
 
   robot.hear /\bdemeter\b/i, (msg) ->
