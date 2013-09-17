@@ -5,7 +5,8 @@
 
 module.exports = (robot) ->
   robot.hear /debug/i, (msg) ->
-    console.log robot
+    console.log msg
+    console.log msg.random
 
   robot.hear /\bdemeter\b/i, (msg) ->
     msg.send "http://i.imgur.com/Z0jvLNm.jpg"
