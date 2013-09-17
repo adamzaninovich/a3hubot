@@ -1,7 +1,7 @@
 module.exports = (robot) ->
   robot.router.post '/update', (req, res) ->
-    console.log "UPDATING"
-    #data = JSON.parse req.body.payload
+    data = JSON.parse req.body.payload
+    consolelog data
     robot.messageRoom 554655, "Time to update!", "brb y'all", ->
       process.exit 0
 
