@@ -8,11 +8,17 @@
 #   None
 #
 # Commands:
-#   hubot remember <place> as a <group> location - Remembers the location for the group
-#   hubot forget <place> as a <group> location - Forgets the location from the group
-#   hubot forget all locations for <group> - Forgets all the locations for the group
-#   hubot where can we go for <group>? - Returns a list of places that exist for the group
-#   hubot where should we go for <group>? - Returns a randomly selected location for the group
+#   hubot (remember|save|add) <place> as a <group> (location|place|spot)    - Remembers the location for the group
+#   hubot (forget|delete|remove) <place> as a <group> (location|place|spot) - Forgets the location from the group
+#   hubot (forget|delete|remove) all (location|place|spot)s for <group>     - Forgets all the locations for the group
+#   hubot where can (I|we) go for <group>?                                  - Returns a list of places that exist for the group
+#   hubot where should (I|we) go for <group>?                               - Returns a randomly selected location for the group
+#
+#   examples:
+#
+#   hubot add w?ch addiction as a lunch place
+#   hubot remember chipotle as a lunch spot
+#   hubot where should we go for lunch?
 #
 # Author:
 #   lukesmith, updated by adamzaninovich
