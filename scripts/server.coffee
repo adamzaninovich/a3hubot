@@ -1,9 +1,9 @@
 module.exports = (robot) ->
   robot.router.post '/update', (req, res) ->
     data = JSON.parse req.body.payload
-    console.log data
-    console.log req
-    robot.messageRoom 554655, "Time to update!", "brb y'all", ->
+    last_commit = data.commits.slice(-1).pop()
+    "#{last_commit.author.name} pushed \"#{last_commit.message}\""
+    robot.messageRoom 554655, "Time to update!", ->
       process.exit 0
 
   robot.router.get '/say', (req, res) ->
