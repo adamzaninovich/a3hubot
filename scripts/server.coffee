@@ -1,3 +1,7 @@
+# Description:
+#   Some routes for hubot including the update endpoint
+#
+
 module.exports = (robot) ->
   robot.router.post '/update', (req, res) ->
     data = JSON.parse req.body.payload
