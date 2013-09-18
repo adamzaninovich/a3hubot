@@ -19,6 +19,9 @@ module.exports = (robot) ->
   robot.hear /\brage\b/i, (msg) ->
     msg.send "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg"
 
+  robot.hear /\bnope\b/, (msg) ->
+    msg.send "http://i.imgur.com/DgczUtV.png"
+
   robot.hear /\bto+tally\b/i, (msg) ->
     num = msg.random [0..9]
     if num % 3 is 0
