@@ -20,4 +20,9 @@ module.exports = (robot) ->
     msg.send "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg"
 
   robot.hear /\bto+tally\b/i, (msg) ->
-    msg.send "http://i.imgur.com/XuTdELg.jpg"
+    num = msg.random [0..9]
+    if num % 3 is 0
+      msg.send "http://i.imgur.com/XuTdELg.jpg"
+    else
+      os = Array(num + 1).join 'o'
+      msg.send "to#{os}tally"
