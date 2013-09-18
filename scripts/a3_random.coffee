@@ -7,7 +7,7 @@ module.exports = (robot) ->
   robot.hear /debug/i, (msg) ->
     console.log msg
 
-  robot.head /\b(tdd|r?specs?|test(ing)?s?|minitest)\b/i, (msg) ->
+  robot.hear /\b(tdd|r?specs?|test(ing)?s?|minitest)\b/i, (msg) ->
     msg.send "http://i.imgur.com/nrGvcQH.jpg" # test all the things
 
   robot.hear /\bdemeter\b/i, (msg) ->
