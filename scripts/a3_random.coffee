@@ -29,3 +29,6 @@ module.exports = (robot) ->
     else
       os = Array(num + 1).join 'o'
       msg.send "to#{os}tally"
+
+  robot.respond /a?re? y?o?u drunk/i, (msg) ->
+    msg.send "http://i.imgur.com/6soruXq.jpg"
