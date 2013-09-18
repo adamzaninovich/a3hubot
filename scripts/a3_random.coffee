@@ -24,7 +24,7 @@ module.exports = (robot) ->
 
   robot.hear /\bto+tally\b/i, (msg) ->
     num = msg.random [0..9]
-    if num % 3 is 0
+    if num % 4 is 0
       msg.send "http://i.imgur.com/XuTdELg.jpg"
     else
       os = Array(num + 1).join 'o'
