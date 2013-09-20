@@ -27,17 +27,17 @@ class AssessmentStorage
     # return scored for all users
 
 class ImageRiskAssessor
-  constructor: (@msg, @cache) ->
+  constructor: (@msg, @cache, @quiet=false) ->
 
   assess: (query) ->
     if typeof(@cache.get query) is "undefined"
-      @msg.send "Hold on, I have to calculate an ira score for \"#{query}\"..."
+      @msg.send "Hold on, I have to calculate an ira score for \"#{query}\"..." unless @quiet
       @query = query
       @make_request @format_query(query), (clean_results) =>
         @make_request @format_query(query, 'off'), (dirty_results) =>
           @calculate_risk clean_results, dirty_results
     else
-      @display_score query, @cache.get(query).score
+      @display_score query, @cache.get(query).score unless @quiet
 
   calculate_risk: (clean, dirty) =>
     score = (_.difference clean, dirty).length
@@ -45,7 +45,7 @@ class ImageRiskAssessor
       @msg.send "Sorry, Google is being a little bitch right now and limiting my queries. Hold off for a sec."
     else
       @cache.put @query, score, @msg.message.user
-      @display_score @query, score
+      @display_score @query, score unless @quiet
 
   display_score: (query, score) -> @msg.send "\"#{query}\" has an ira score of #{score}."
   format_query: (query, safe='active') -> { v: '1.0', rsz: '8', q: query, safe: safe }
@@ -69,6 +69,10 @@ module.exports = (robot) ->
 
   robot.respond /show( the)?( assessment)?( leaderboard)?s?/i, (msg) ->
     robot.ImageAssessmentStorage.leaderboard
+
+  robot.on "assess", (msg, query) ->
+    assessor = new ImageRiskAssessor msg, robot.ImageAssessmentStorage, true
+    assessor.assess query
 
   #robot.respond /unassess( me)? (.*)/i, (msg) ->
   #  robot.ImageAssessmentStorage.delete msg.match[2]

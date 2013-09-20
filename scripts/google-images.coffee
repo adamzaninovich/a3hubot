@@ -9,6 +9,7 @@
 
 module.exports = (robot) ->
   robot.respond /(image|img)( me)? (.*)/i, (msg) ->
+    robot.emit "assess", msg, msg.match[3]
     imageMe msg, msg.match[3], (url) ->
       msg.send url
 
