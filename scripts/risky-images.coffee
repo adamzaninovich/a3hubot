@@ -41,8 +41,11 @@ class ImageRiskAssessor
 
   calculate_risk: (clean, dirty) =>
     score = (_.difference clean, dirty).length
-    @cache.put @query, score, @msg.message.user unless score is 0
-    @display_score @query, score
+    if score is 0
+      @msg.send "Sorry, Google is being a little bitch right now and limiting my queries. Hold off for a sec."
+    else
+      @cache.put @query, score, @msg.message.user
+      @display_score @query, score
 
   display_score: (query, score) -> @msg.send "\"#{query}\" has an ira score of #{score}."
   format_query: (query, safe='active') -> { v: '1.0', rsz: '8', q: query, safe: safe }
@@ -63,6 +66,10 @@ module.exports = (robot) ->
   robot.respond /assess( me)? (.*)/i, (msg) ->
     assessor = new ImageRiskAssessor msg, robot.ImageAssessmentStorage
     assessor.assess msg.match[2]
+
+  robot.respond /show( the)?( assessment)?( leaderboard)?s?/i, (msg) ->
+    robot.ImageAssessmentStorage.leaderboard
+
   #robot.respond /unassess( me)? (.*)/i, (msg) ->
   #  robot.ImageAssessmentStorage.delete msg.match[2]
   #  msg.send "Removed #{msg.match[2]} from by brain"
