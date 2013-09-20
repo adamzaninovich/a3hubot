@@ -23,13 +23,23 @@ class AssessmentStorage
   user: (user) ->
     # return scores for a user
 
-  leaderboard: () ->
-    # return scored for all users
+  leaderboard: (callback) ->
+    mapped = _.map @robot.brain.data.assessments, (result, query) ->
+      result.query = query
+      result
+    sorted = _.sortBy mapped, (result) -> -result.score
+    _.each sorted[0..9], callback
+
+  #downcase: ->
+    #_.each @robot.brain.data.assessments, (result, query) ->
+      #delete @robot.brain.data.assessments[query]
+      #@robot.brain.data.assessments[query.toLowerCase()] = result
 
 class ImageRiskAssessor
   constructor: (@msg, @cache, @quiet=false) ->
 
   assess: (query) ->
+    query = query.toLowerCase()
     if typeof(@cache.get query) is "undefined"
       @msg.send "Hold on, I have to calculate an ira score for \"#{query}\"..." unless @quiet
       @query = query
@@ -63,16 +73,22 @@ class ImageRiskAssessor
 
 module.exports = (robot) ->
   robot.ImageAssessmentStorage = new AssessmentStorage robot
+
   robot.respond /assess( me)? (.*)/i, (msg) ->
     assessor = new ImageRiskAssessor msg, robot.ImageAssessmentStorage
     assessor.assess msg.match[2]
 
-  robot.respond /show( the)?( assessment)?( leaderboard)?s?/i, (msg) ->
-    robot.ImageAssessmentStorage.leaderboard
+  robot.respond /(show)?( the)? ?(leaderboard)s?/i, (msg) ->
+    msg.send "=== Risk Assessment Leaderboard ==="
+    robot.ImageAssessmentStorage.leaderboard (result, place) ->
+      msg.send "#{place+1}. #{result.score} - \"#{result.query}\" - #{result.user.name}"
 
   robot.on "assess", (msg, query) ->
     assessor = new ImageRiskAssessor msg, robot.ImageAssessmentStorage, true
     assessor.assess query
+
+  #robot.respond 'dc assess', (msg) ->
+    #robot.ImageAssessmentStorage.downcase()
 
   #robot.respond /unassess( me)? (.*)/i, (msg) ->
   #  robot.ImageAssessmentStorage.delete msg.match[2]
