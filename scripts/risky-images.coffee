@@ -28,7 +28,7 @@ class AssessmentStorage
       result.query = query
       result
     sorted = _.sortBy mapped, (result) -> -result.score
-    _.each sorted[0..9], callback
+    sorted[0..9]
 
   #downcase: ->
     #_.each @robot.brain.data.assessments, (result, query) ->
@@ -80,8 +80,9 @@ module.exports = (robot) ->
 
   robot.respond /(show)?( the)? ?(leaderboard)s?/i, (msg) ->
     msg.send "=== Risk Assessment Leaderboard ==="
-    robot.ImageAssessmentStorage.leaderboard (result, place) ->
-      msg.send "#{place+1}. #{result.score} - \"#{result.query}\" - #{result.user.name}"
+    leaderboard = _.map robot.ImageAssessmentStorage.leaderboard(), (result, place) ->
+      "#{place+1}. #{result.score} - \"#{result.query}\" - #{result.user.name}"
+    msg.send.apply this, leaderboard
 
   robot.on "assess", (msg, query) ->
     assessor = new ImageRiskAssessor msg, robot.ImageAssessmentStorage, true
