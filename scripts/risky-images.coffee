@@ -63,7 +63,7 @@ module.exports = (robot) ->
   robot.respond /assess( me)? (.*)/i, (msg) ->
     assessor = new ImageRiskAssessor msg, robot.ImageAssessmentStorage
     assessor.assess msg.match[2]
-  robot.respond /unassess( me)? (.*)/i, (msg) ->
-    robot.ImageAssessmentStorage.delete msg.match[2]
-    msg.send "Removed #{msg.match[2]} from by brain"
+  #robot.respond /unassess( me)? (.*)/i, (msg) ->
+  #  robot.ImageAssessmentStorage.delete msg.match[2]
+  #  msg.send "Removed #{msg.match[2]} from by brain"
 
