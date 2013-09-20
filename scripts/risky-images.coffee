@@ -15,6 +15,9 @@ class AssessmentStorage
     if typeof @get(query) is "undefined"
       @robot.brain.data.assessments[query] = score: score, user: user
 
+  delete: (query) ->
+    delete @robot.brain.data.assessments[query]
+
   get: (query) -> @robot.brain.data.assessments[query]
 
   user: (user) ->
@@ -38,7 +41,7 @@ class ImageRiskAssessor
 
   calculate_risk: (clean, dirty) =>
     score = (_.difference clean, dirty).length
-    @cache.put @query, score, @msg.message.user
+    @cache.put @query, score, @msg.message.user unless score is 0
     @display_score @query, score
 
   display_score: (query, score) -> @msg.send "\"#{query}\" has an ira score of #{score}."
@@ -60,4 +63,7 @@ module.exports = (robot) ->
   robot.respond /assess( me)? (.*)/i, (msg) ->
     assessor = new ImageRiskAssessor msg, robot.ImageAssessmentStorage
     assessor.assess msg.match[2]
+  robot.respond /unassess( me)? (.*)/i, (msg) ->
+    robot.ImageAssessmentStorage.delete msg.match[2]
+    msg.send "Removed #{msg.match[2]} from by brain"
 
