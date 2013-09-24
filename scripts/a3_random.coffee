@@ -46,4 +46,8 @@ module.exports = (robot) ->
     msg.send "http://i.imgur.com/80PQSCo.gif" # IT IS DECIDED
 
   robot.respond /(JC|Jon|Jon Christopher)( me)?/i, (msg) ->
-    msg.send "http://i.imgur.com/01ABSlt.jpg?1" # JC
+    msg.send msg.random [
+      "http://i.imgur.com/01ABSlt.jpg?1",
+      "http://i.imgur.com/wNL5RWi.jpg",
+      "http://i.imgur.com/xpgpdq1.png"
+    ]
