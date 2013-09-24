@@ -44,3 +44,6 @@ module.exports = (robot) ->
 
   robot.hear /^IT IS DECIDED\!?$/, (msg) ->
     msg.send "http://i.imgur.com/80PQSCo.gif" # IT IS DECIDED
+
+  robot.respond /(JC|Jon|Jon Christopher)( me)?/i, (msg) ->
+    msg.send "http://i.imgur.com/01ABSlt.jpg?1" # JC
