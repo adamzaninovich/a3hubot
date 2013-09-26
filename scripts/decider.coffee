@@ -52,17 +52,22 @@ module.exports = (robot) ->
     locationname = msg.match[2]
     locationgroup = msg.match[3]
     locations.add locationgroup, locationname
+    msg.reply "Ok, I #{msg.match[1]}ed #{locationname} to #{locationgroup}"
 
   robot.respond /(forget|delete|remove) (.*) as a (.*) (location|place|spot)/i, (msg) ->
     locationname = msg.match[2]
     locationgroup = msg.match[3]
     locations.remove locationgroup, locationname
+    msg.reply "Ok, I #{msg.match[1]}ed #{locationname} from #{locationgroup}"
 
-  robot.respond /(forget|delete|remove) all (location|place|spot)s for (.*)/i, (msg) ->
+  robot.respond /(forget|delete|remove) all (location|place|spot)s for (.*) and yes I'm fucking sure!/i, (msg) ->
     locationgroup = msg.match[3]
     locations.removeAll locationgroup
 
-  robot.respond /where can (we|I) go for (.*)\?$/i, (msg) ->
+  robot.respond /(forget|delete|remove) all (location|place|spot)s for (.*)/i, (msg) ->
+    msg.reply "Are you sure?"
+
+  robot.respond /where can (we|I|they) go for (.*)/i, (msg) ->
     locationgroup = msg.match[2]
     grouplocations = locations.group(locationgroup)
     if grouplocations.length > 0
@@ -71,7 +76,7 @@ module.exports = (robot) ->
     else
       msg.send "I don't know anywhere to go for #{locationgroup}"
 
-  robot.respond /where should (we|I) go for (.*)\?$/i, (msg) ->
+  robot.respond /where should (we|I|they) go for (.*)/i, (msg) ->
     locationgroup = msg.match[2]
     grouplocations = locations.group(locationgroup)
     if grouplocations.length is 0
