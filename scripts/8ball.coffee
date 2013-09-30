@@ -2,16 +2,16 @@
 #   Magic 8 Ball
 #
 # Commands:
-#   hubot magic 8 ball me
+#   hubot magic 8 ball me <question>?
 #
 
 module.exports = (robot) ->
-  robot.respond /(magic )?8( )?ball( me)?/i, (msg) ->
-    msg.reply msg.random [
+  robot.respond /(magic )?8( )?ball( me)? (.+)\??/i, (msg) ->
+    response = [
       "ask again later",
       "yes",
       "my sources say no",
-      "you many rely on it",
+      "you may rely on it",
       "yes definitely",
       "very doubtful",
       "signs point to yes",
@@ -30,3 +30,4 @@ module.exports = (robot) ->
       "outlook not so good",
       "really bro?!"
     ]
+    msg.reply "\"#{msg.match[4]}\": #{msg.random response}"
