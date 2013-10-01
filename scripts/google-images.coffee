@@ -9,7 +9,7 @@
 
 module.exports = (robot) ->
   robot.respond /(image|img)( me)? (.*)/i, (msg) ->
-    robot.emit "assess", msg, msg.match[3]
+    #robot.emit "assess", msg, msg.match[3]
     imageMe msg, msg.match[3], (url) ->
       msg.send url
 
@@ -37,7 +37,6 @@ imageMe = (msg, query, animated, faces, cb) ->
   msg.http('http://ajax.googleapis.com/ajax/services/search/images')
     .query(q)
     .get() (err, res, body) ->
-      console.log res
       images = JSON.parse(body)
       images = images.responseData?.results
       if images?.length > 0
