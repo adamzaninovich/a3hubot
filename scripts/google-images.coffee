@@ -37,7 +37,7 @@ imageMe = (msg, query, animated, faces, cb) ->
   msg.http('http://ajax.googleapis.com/ajax/services/search/images')
     .query(q)
     .get() (err, res, body) ->
-      console.log err
+      console.log res
       images = JSON.parse(body)
       images = images.responseData?.results
       if images?.length > 0
