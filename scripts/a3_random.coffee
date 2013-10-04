@@ -44,6 +44,9 @@ module.exports = (robot) ->
 
   robot.respond /do (yo)?u work( )?out/i, (msg) ->
     msg.send "http://i.imgur.com/EoqKfIx.jpg" # workout robot works out
+  
+  robot.respond /.*I love you/i, (msg) ->
+    msg.reply "I love you too"
 
   robot.hear /^IT IS DECIDED\!?$/, (msg) ->
     msg.send "http://i.imgur.com/80PQSCo.gif" # IT IS DECIDED
