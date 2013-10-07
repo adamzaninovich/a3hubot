@@ -7,8 +7,8 @@ module.exports = (robot) ->
   robot.hear /debug/i, (msg) ->
     console.log msg
 
-  robot.hear /\b(tdd|r?specs?|test(ing)?s?|minitest)\b/i, (msg) ->
-    msg.send "http://i.imgur.com/nrGvcQH.jpg" # test all the things
+# robot.hear /\b(tdd|r?specs?|test(ing)?s?|minitest)\b/i, (msg) ->
+#   msg.send "http://i.imgur.com/nrGvcQH.jpg" # test all the things
 
   robot.hear /\bdemeter\b/i, (msg) ->
     msg.send "http://i.imgur.com/Z0jvLNm.jpg" # say demeter one more time
@@ -44,7 +44,7 @@ module.exports = (robot) ->
 
   robot.respond /do (yo)?u work( )?out/i, (msg) ->
     msg.send "http://i.imgur.com/EoqKfIx.jpg" # workout robot works out
-  
+
   robot.respond /.*I love you/i, (msg) ->
     msg.reply "I love you too"
 
