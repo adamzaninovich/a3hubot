@@ -67,7 +67,7 @@ module.exports = (robot) ->
   robot.respond /(forget|delete|remove) all (location|place|spot)s for (.*)/i, (msg) ->
     msg.reply "Are you sure?"
 
-  robot.respond /where can (we|I|they) go for (.*)/i, (msg) ->
+  robot.respond /where can (we|I|they) go for ([^?]*)/i, (msg) ->
     locationgroup = msg.match[2]
     grouplocations = locations.group(locationgroup)
     if grouplocations.length > 0
@@ -76,7 +76,7 @@ module.exports = (robot) ->
     else
       msg.send "I don't know anywhere to go for #{locationgroup}"
 
-  robot.respond /where should (we|I|they) go for (.*)/i, (msg) ->
+  robot.respond /where should (we|I|they) go for ([^?]*)/i, (msg) ->
     locationgroup = msg.match[2]
     grouplocations = locations.group(locationgroup)
     if grouplocations.length is 0
