@@ -22,13 +22,13 @@ module.exports = (robot) ->
   robot.hear /\brage\b/i, (msg) ->
     msg.send "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg"
 
-  robot.hear /\bnope\b/, (msg) ->
+  robot.hear /\bnope\b/i, (msg) ->
     msg.send "http://i.imgur.com/DgczUtV.png" # nope nope nope
 
-  robot.hear /\bbusted\b/, (msg) ->
+  robot.hear /\bbusted\b/i, (msg) ->
     msg.send "http://i.imgur.com/MasM57I.png" # busted!
 
-  robot.hear /\bdevops\b/, (msg) ->
+  robot.hear /\bdevops\b/i, (msg) ->
     msg.send "http://i.imgur.com/Ujxb5gn.png" # worked fine in dev, ops problem now
 
   robot.hear /\bto+tally\b/i, (msg) ->
