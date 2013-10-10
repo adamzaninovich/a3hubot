@@ -51,6 +51,10 @@ module.exports = (robot) ->
   robot.hear /^IT IS DECIDED\!?$/, (msg) ->
     msg.send "http://i.imgur.com/80PQSCo.gif" # IT IS DECIDED
 
+  robot.hear /oh? (yo)?u so/i, (msg) ->
+    things = ["special", "clever", "crazy", "silly"]
+    msg.send "oh you so #{msg.random things}"
+
   robot.respond /(JC|Jon|Jon Christopher)( me)?/i, (msg) ->
     msg.send msg.random [
       "http://i.imgur.com/01ABSlt.jpg?1",
