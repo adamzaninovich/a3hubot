@@ -23,7 +23,8 @@ module.exports = (robot) ->
     msg.send "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg"
 
   robot.hear /\bnope\b/i, (msg) ->
-    msg.send "http://i.imgur.com/DgczUtV.png" # nope nope nope
+    nopes = ["http://i.imgur.com/yBE4JbR.jpg", "http://i.imgur.com/DgczUtV.png"]
+    msg.send msg.random nopes # nope nope nope
 
   robot.hear /\bbusted\b/i, (msg) ->
     msg.send "http://i.imgur.com/MasM57I.png" # busted!
