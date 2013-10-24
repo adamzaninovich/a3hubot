@@ -52,16 +52,19 @@ module.exports = (robot) ->
         users = robot.brain.usersForFuzzyName(name)
         if users.length is 1
           user = users[0]
-          user.roles = user.roles or [ ]
-
-          if newRole in user.roles
-            msg.send "I know"
+          if user.id is msg.envelope.user.id
+            msg.reply msg.random ["Nice try, asshole","I don't think so", "Please try again", "LOL NOPE"]
           else
-            user.roles.push(newRole)
-            if name.toLowerCase() is robot.name.toLowerCase()
-              msg.send "Ok, I am #{newRole}."
+            user.roles = user.roles or [ ]
+
+            if newRole in user.roles
+              msg.send "I know"
             else
-              msg.send "Ok, #{name} is #{newRole}."
+              user.roles.push(newRole)
+              if name.toLowerCase() is robot.name.toLowerCase()
+                msg.send "Ok, I am #{newRole}."
+              else
+                msg.send "Ok, #{name} is #{newRole}."
         else if users.length > 1
           msg.send getAmbiguousUserText users
         else
@@ -75,13 +78,16 @@ module.exports = (robot) ->
       users = robot.brain.usersForFuzzyName(name)
       if users.length is 1
         user = users[0]
-        user.roles = user.roles or [ ]
-
-        if newRole not in user.roles
-          msg.send "I know."
+        if user.id is msg.envelope.user.id
+          msg.reply msg.random ["Nice try, asshole","I don't think so", "Please try again", "LOL NOPE"]
         else
-          user.roles = (role for role in user.roles when role isnt newRole)
-          msg.send "Ok, #{name} is no longer #{newRole}."
+          user.roles = user.roles or [ ]
+
+          if newRole not in user.roles
+            msg.send "I know."
+          else
+            user.roles = (role for role in user.roles when role isnt newRole)
+            msg.send "Ok, #{name} is no longer #{newRole}."
       else if users.length > 1
         msg.send getAmbiguousUserText users
       else
