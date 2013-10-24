@@ -53,7 +53,7 @@ module.exports = (robot) ->
         if users.length is 1
           user = users[0]
           if user.id is msg.envelope.user.id
-            msg.reply msg.random ["Nice try, asshole","I don't think so", "Please try again", "LOL NOPE", "Fuck off", "I'm busy", "http://i.imgur.com/DgczUtV.png"]
+            msg.reply msg.random ["Nice try, asshole","I don't think so", "Please try again", "LOL NOPE", "Fuck off", "I'm busy", "NOPE NOPE NOPE!"]
           else
             user.roles = user.roles or [ ]
 
@@ -79,7 +79,7 @@ module.exports = (robot) ->
       if users.length is 1
         user = users[0]
         if user.id is msg.envelope.user.id
-          msg.reply msg.random ["Nice try, asshole","I don't think so", "Please try again", "LOL NOPE", "Fuck off", "I'm busy", "http://i.imgur.com/DgczUtV.png"]
+          msg.reply msg.random ["Nice try, asshole","I don't think so", "Please try again", "LOL NOPE", "Fuck off", "I'm busy", "NOPE NOPE NOPE!"]
         else
           user.roles = user.roles or [ ]
 
