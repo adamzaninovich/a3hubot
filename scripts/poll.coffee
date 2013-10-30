@@ -39,7 +39,7 @@ class Poll
 
   # Poll management
   createPoll: (msg) =>
-    return msg.send('Please end the current poll before starting a new one') if @poll != null
+    return msg.send('Please end the current poll before starting a new one') if @poll 
     answers = this.createAnswers(msg.match[2])
     return msg.send('Please provide at least 2 answers') if answers.length <= 1
 
