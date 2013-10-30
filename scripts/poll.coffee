@@ -33,12 +33,14 @@ class Poll
     @robot.respond /(end|stop|close) poll/i, this.endPoll
     @robot.respond /vote ([0-9]*)/i, this.vote
     @robot.respond /previous poll/i, this.showPreviousPoll
+    @robot.respond /current poll/i, this.showCurrentPoll
 
   getUser: (msg) ->
     msg.message.user
 
   # Poll management
   createPoll: (msg) =>
+    return msg.send('Please end the current poll before starting a new one') if @poll 
     answers = this.createAnswers(msg.match[2])
     return msg.send('Please provide at least 2 answers') if answers.length <= 1
 
@@ -67,6 +69,16 @@ class Poll
     msg.send """Here are the results for “#{@previousPoll.question}”:
     #{this.printResults(@previousPoll)}
     This poll was brought to you by #{@previousPoll.user.name}
+    """
+
+  showCurrentPoll: (msg) =>
+    return msg.send('There’s currently no poll.') unless @poll
+    msg.send """Here is the current poll:
+    "#{@poll.question}"
+    #{this.printAnswers()}
+    Current Votes:
+    #{this.printResults(@poll)}
+    This poll was brought to you by "#{@poll.user.name}"
     """
 
   # Ansers management
