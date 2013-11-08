@@ -4,7 +4,7 @@
 #
 
 module.exports = (robot) ->
-  robot.respond /*/i, (msg) ->
+  robot.respond /.*/i, (msg) ->
     nonAsciiString = (str) ->
       for i in 0..str.length
         if str.charCodeAt(i) > 255
