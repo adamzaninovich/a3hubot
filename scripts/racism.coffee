@@ -8,8 +8,7 @@ module.exports = (robot) ->
     nonAsciiString = (str) ->
       for i in [0..str.length]
         if str.charCodeAt(i) > 255
-          true
-        else
-          false
+          return true
+      false
     if nonAsciiString(msg.message.user.name)
       msg.send "Do I have to respond to this asshole?"
