@@ -30,7 +30,7 @@ module.exports = (robot) ->
 
 imageMe = (msg, query, animated, faces, cb) ->
   query = "unicorn #{query}" if (new Date).getDay() is 2
-  query = "#{query} YOLO" if (new Date).getDay() is 3
+  query = "#{query} humpday" if (new Date).getDay() is 3
   cb = animated if typeof animated == 'function'
   cb = faces if typeof faces == 'function'
   q = v: '1.0', rsz: '8', q: query, safe: 'active'
