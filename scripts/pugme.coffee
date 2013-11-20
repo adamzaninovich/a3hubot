@@ -24,7 +24,7 @@ module.exports = (robot) ->
       .get() (err, res, body) ->
         msg.send pug for pug in JSON.parse(body).pugs
         setTimeout ( ->
-          msg.send "You really should scroll up..."
+          msg.send "Oooopsie...You really shouldn't scroll up..."
         ), 9000
 
   robot.respond /how many pugs are there/i, (msg) ->
