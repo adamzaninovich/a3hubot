@@ -56,12 +56,3 @@ module.exports = (robot) ->
     things = ["special", "clever", "crazy", "silly"]
     msg.send "oh you so #{msg.random things}"
 
-  robot.respond /(JC|Jon|Jon Christopher)( me)?/i, (msg) ->
-    msg.send msg.random [
-      "http://i.imgur.com/01ABSlt.jpg?1",
-      "http://i.imgur.com/wNL5RWi.jpg",
-      "http://i.imgur.com/xpgpdq1.png",
-      "http://i.imgur.com/Z2GOal6.png",
-      "http://i.imgur.com/tpyYxju.png",
-      "http://i.imgur.com/xbU4UC0.jpg"
-    ]
