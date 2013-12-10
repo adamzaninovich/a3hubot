@@ -18,7 +18,6 @@ all_jons = [
   "http://i.imgur.com/hA7O8Ws.jpg"
   "http://i.imgur.com/w8gfBPf.png"
   "http://i.imgur.com/hA7O8Ws.jpg"
-  "http://i.imgur.com/2EtGNNx.jpg"
   "http://i.imgur.com/pCWQLh5.jpg"
   "http://i.imgur.com/sPtdtvd.jpg"
   "http://i.imgur.com/wu6050H.jpg"
