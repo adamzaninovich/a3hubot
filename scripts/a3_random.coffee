@@ -26,6 +26,10 @@ module.exports = (robot) ->
     nopes = ["http://i.imgur.com/yBE4JbR.jpg", "http://i.imgur.com/DgczUtV.png"]
     msg.send msg.random nopes # nope nope nope
 
+  robot.hear /\byep\b/i, (msg) ->
+    yeps = ["http://i.imgur.com/PYt1Q78.png","http://i.imgur.com/a4qBBkv.gif", "http://www.youtube.com/watch?v=cAEVzJnHv2c"]
+    msg.send msg.random yeps #yep yep yep!
+
   robot.hear /\bbusted\b/i, (msg) ->
     msg.send "http://i.imgur.com/MasM57I.png" # busted!
 
