@@ -25,6 +25,11 @@ all_jons = [
   "http://i.imgur.com/eygXc8r.jpg"
   "http://i.imgur.com/POgcwka.jpg"
   "http://i.imgur.com/HgnGWGA.jpg"
+  "http://i.imgur.com/o41ljGE.gif"
+  "http://i.imgur.com/o41ljGE.gif"
+  "http://i.imgur.com/o41ljGE.gif"
+  "http://i.imgur.com/o41ljGE.gif"
+  "http://i.imgur.com/o41ljGE.gif"
 ]
 
 module.exports = (robot) ->
@@ -32,5 +37,6 @@ module.exports = (robot) ->
   robot.respond /(JC|Jon|Jon Christopher) bomb( (\d+))?/i, (msg) ->
     count = msg.match[2] || all_jons.length
     jons = _.shuffle all_jons
+    jons.push "http://i.imgur.com/o41ljGE.gif"
     msg.send jon for jon in jons[0...count-1]
 
