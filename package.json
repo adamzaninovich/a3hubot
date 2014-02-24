@@ -20,6 +20,7 @@
     "hubot-imessage" : ">=0.0.1",
     "optparse": "1.0.3",
     "hubot-what-the-fox": "",
+    "hubot-dogeme": "",
     "scraper": "0.0.9",
     "underscore": ""
   },
