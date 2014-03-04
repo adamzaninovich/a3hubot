@@ -19,12 +19,7 @@ module.exports = (robot) ->
 
   robot.respond /die$/i, (msg) ->
     msg.send "http://i.imgur.com/DgczUtV.png"
-    #msg.send "Goodbye, cruel world.", ->
-    #  process.exit 0
 
   robot.respond /update/i, (msg) ->
-    if msg.message.user.id is 1423024
-      msg.send "Updating my bad self...", ->
-        process.exit 0
-    else
-      msg.send "http://i.imgur.com/DgczUtV.png"
+    msg.send "Updating my bad self...", ->
+      process.exit 0
