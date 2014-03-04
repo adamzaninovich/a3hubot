@@ -22,7 +22,8 @@
     "hubot-what-the-fox": "",
     "hubot-dogeme": "",
     "scraper": "0.0.9",
-    "underscore": ""
+    "underscore": "",
+    "hubot-slack": "~2.0.3"
   },
   "engines": {
     "node": ">= 0.8.x",
