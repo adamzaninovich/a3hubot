@@ -15,3 +15,4 @@ module.exports = (robot) ->
   robot.router.get '/say', (req, res) ->
     robot.messageRoom 'random', "#{req.query.message}", ->
       res.end "#{req.query.message}"
+      "#{req.query.message}"
