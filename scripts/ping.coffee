@@ -21,5 +21,5 @@ module.exports = (robot) ->
     msg.send "http://i.imgur.com/DgczUtV.png"
 
   robot.respond /update/i, (msg) ->
-    msg.send "Updating my bad self...", ->
-      process.exit 0
+    setTimeout 1000, -> process.exit 0
+    msg.send "Updating my bad self..."
