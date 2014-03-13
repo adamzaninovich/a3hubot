@@ -32,6 +32,9 @@ module.exports = (robot) ->
   robot.hear /\bdevops\b/i, (msg) ->
     msg.send "http://i.imgur.com/Ujxb5gn.png" # worked fine in dev, ops problem now
 
+  robot.hear /\bbe?e?mo\b/i, (msg) ->
+    msg.send "http://25.media.tumblr.com/tumblr_lwxdpiz2nL1r32wpdo1_400.gif" # beemo is a dancing machine
+
   robot.hear /\bto+tally\b/i, (msg) ->
     num = msg.random [0..9]
     if num % 4 is 0
