@@ -37,6 +37,7 @@ all_jons = [
   "http://i.imgur.com/o41ljGE.gif"
   "http://i.imgur.com/o41ljGE.gif"
   "http://i.imgur.com/o41ljGE.gif"
+  "http://i.imgur.com/hGmdvsW.png"
 ]
 
 module.exports = (robot) ->
