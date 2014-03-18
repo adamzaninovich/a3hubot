@@ -3,6 +3,8 @@
 #
 # Commands:
 
+module.exports = (robot) ->
+
   robot.hear /\bright on,? right on\b/i, (msg) ->
     msg.send "https://www.youtube.com/watch?v=QZE3STUXphM"
 
