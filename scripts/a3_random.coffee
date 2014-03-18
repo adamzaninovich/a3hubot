@@ -35,13 +35,13 @@ module.exports = (robot) ->
   robot.hear /\bbeemo\b/i, (msg) ->
     msg.send "http://25.media.tumblr.com/tumblr_lwxdpiz2nL1r32wpdo1_400.gif" # beemo is a dancing machine
 
-  robot.hear /\bto+tally\b/i, (msg) ->
+  robot.hear /\bto+t(ally|es)\b/i, (msg) ->
     num = msg.random [0..9]
     if num % 4 is 0
       msg.send "http://i.imgur.com/XuTdELg.jpg" # shiva tooootally
     else
       os = Array(num + 1).join 'o'
-      msg.send "to#{os}tally"
+      msg.send "to#{os}tes"
 
   robot.respond /a?re? y?o?u drunk/i, (msg) ->
     msg.send "http://i.imgur.com/6soruXq.jpg" # drunk robot is drunk
