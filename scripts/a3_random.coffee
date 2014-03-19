@@ -39,6 +39,8 @@ module.exports = (robot) ->
     num = msg.random [0..9]
     if num % 4 is 0
       msg.send "http://i.imgur.com/XuTdELg.jpg" # shiva tooootally
+    else if num == 2
+      msg.send "http://i.imgur.com/4hSczvR.png" # totes ma gotes
     else
       os = Array(num + 1).join 'o'
       msg.send "to#{os}tes"
