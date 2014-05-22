@@ -17,7 +17,7 @@ module.exports = (robot) ->
     msg.send "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg"
 
   robot.hear /\bjavascript\b/i, (msg) ->
-    msg.send "http://imgur.com/0zJMrpi"
+    msg.send "http://i.imgur.com/0zJMrpi.jpg"
 
   robot.hear /\bangry\b/i, (msg) ->
     msg.send "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg"
