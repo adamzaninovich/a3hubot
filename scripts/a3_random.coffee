@@ -13,14 +13,10 @@ module.exports = (robot) ->
   robot.hear /\bdemeter\b/i, (msg) ->
     msg.send "http://i.imgur.com/Z0jvLNm.jpg" # say demeter one more time
 
-  robot.hear /\bmad\b/i, (msg) ->
-    msg.send "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg"
-
-  robot.hear /\bangry\b/i, (msg) ->
-    msg.send "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg"
-
-  robot.hear /\brage\b/i, (msg) ->
-    msg.send "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg"
+  robot.hear /\b(mad|angry|rage)\b/i, (msg) ->
+    [ "http://24.media.tumblr.com/e48acd4c34a62200a81df7259ab31d57/tumblr_n2kygg41US1rzgx44o1_400.gif",
+      "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg" ]
+    msg.send msg.random mad_images
 
   robot.hear /\bnope\b/i, (msg) ->
     nopes = ["http://i.imgur.com/yBE4JbR.jpg", "http://i.imgur.com/DgczUtV.png"]
