@@ -39,7 +39,7 @@ module.exports = (robot) ->
       msg.send "http://i.imgur.com/4hSczvR.png" # totes ma gotes
     else
       os = Array(num + 1).join 'o'
-      msg.send "to#{os}tes"
+      msg.send "to#{os}tallys"
 
   robot.respond /a?re? y?o?u drunk/i, (msg) ->
     msg.send "http://i.imgur.com/6soruXq.jpg" # drunk robot is drunk
