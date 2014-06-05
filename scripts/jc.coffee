@@ -43,8 +43,9 @@ all_jons = [
 module.exports = (robot) ->
   robot.respond /(JC|Jon|Jon Christopher)( me)?/i, (msg) -> msg.send msg.random all_jons
   robot.respond /(JC|Jon|Jon Christopher) bomb( (\d+))?/i, (msg) ->
-    count = msg.match[2] || all_jons.length
-    jons = (_.shuffle all_jons)[0...count-2]
-    jons.push "http://i.imgur.com/o41ljGE.gif"
-    msg.send jon for jon in jons
+    msg.send "just stop ok? just stop"
+    #count = msg.match[2] || all_jons.length
+    #jons = (_.shuffle all_jons)[0...count-2]
+    #jons.push "http://i.imgur.com/o41ljGE.gif"
+    #msg.send jon for jon in jons
 
