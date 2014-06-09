@@ -7,6 +7,9 @@ module.exports = (robot) ->
   robot.hear /debug/i, (msg) ->
     console.log msg
 
+  robot.hear /\bhmm*\b/i, (msg) ->
+    msg.send "http://i.imgur.com/4PaAUu5.png" # pensive nate
+
 # robot.hear /\b(tdd|r?specs?|test(ing)?s?|minitest)\b/i, (msg) ->
 #   msg.send "http://i.imgur.com/nrGvcQH.jpg" # test all the things
 
