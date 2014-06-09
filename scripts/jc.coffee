@@ -42,6 +42,7 @@ all_jons = [
 ]
 
 module.exports = (robot) ->
+  robot.hear /\bprincess\b/i, (msg) -> msg.send "http://i.imgur.com/UUvyLHn.jpg"
   robot.respond /(JC|Jon|Jon Christopher)( me)?/i, (msg) -> msg.send msg.random all_jons
   robot.respond /(JC|Jon|Jon Christopher) bomb( (\d+))?/i, (msg) ->
     msg.send "just stop ok? just stop"
