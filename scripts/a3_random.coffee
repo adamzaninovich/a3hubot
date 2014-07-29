@@ -10,9 +10,6 @@ module.exports = (robot) ->
   robot.hear /\bhmm*\b/i, (msg) ->
     msg.send "http://i.imgur.com/4PaAUu5.png" # pensive nate
 
-# robot.hear /\b(tdd|r?specs?|test(ing)?s?|minitest)\b/i, (msg) ->
-#   msg.send "http://i.imgur.com/nrGvcQH.jpg" # test all the things
-
   robot.hear /\bdemeter\b/i, (msg) ->
     msg.send "http://i.imgur.com/Z0jvLNm.jpg" # say demeter one more time
 
@@ -45,7 +42,7 @@ module.exports = (robot) ->
       msg.send "http://i.imgur.com/4hSczvR.png" # totes ma gotes
     else
       os = Array(num + 1).join 'o'
-      msg.send "to#{os}tallys"
+      msg.send "to#{os}tally"
 
   robot.respond /a?re? y?o?u drunk/i, (msg) ->
     msg.send "http://i.imgur.com/6soruXq.jpg" # drunk robot is drunk
@@ -53,8 +50,8 @@ module.exports = (robot) ->
   robot.respond /do (yo)?u work( )?out/i, (msg) ->
     msg.send "http://i.imgur.com/EoqKfIx.jpg" # workout robot works out
 
-  robot.respond /.*I love you/i, (msg) ->
-    msg.reply "I love you too"
+  robot.respond /hubot.*I love you|I love you.*hubot/i, (msg) ->
+    msg.reply "aww, I love you too!"
 
   robot.hear /^IT IS DECIDED\!?$/, (msg) ->
     msg.send "http://i.imgur.com/80PQSCo.gif" # IT IS DECIDED
