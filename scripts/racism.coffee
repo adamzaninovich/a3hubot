@@ -1,6 +1,6 @@
 # Description:
 #   A little Racism in Hubot
-#   Author: Adam Zaninovich
+#   Author: Nathaniel Barnes
 #
 
 module.exports = (robot) ->
