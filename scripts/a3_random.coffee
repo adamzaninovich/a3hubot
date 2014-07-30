@@ -7,7 +7,7 @@ module.exports = (robot) ->
   robot.hear /debug/i, (msg) ->
     console.log msg
 
-  robot.hear /(c'?m|come )on son|son\!/i, (msg) ->
+  robot.hear /(c'?m|come )on @?son|@?son\!/i, (msg) ->
     msg.send "http://i.imgur.com/WGxmlh4.jpg"
 
   robot.hear /\bhmm*\b/i, (msg) ->
