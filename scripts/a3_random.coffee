@@ -37,6 +37,9 @@ module.exports = (robot) ->
   robot.hear /\bbeemo\b/i, (msg) ->
     msg.send "http://25.media.tumblr.com/tumblr_lwxdpiz2nL1r32wpdo1_400.gif" # beemo is a dancing machine
 
+  robot.hear /\bcache\b/i, (msg) ->
+    msg.send "http://29.media.tumblr.com/tumblr_lucazumFaJ1qela0oo1_500.png" # cash
+
   robot.hear /\bto+t(ally|es)\b/i, (msg) ->
     num = msg.random [0..9]
     if num % 4 is 0
