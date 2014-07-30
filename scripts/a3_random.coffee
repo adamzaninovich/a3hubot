@@ -16,6 +16,16 @@ module.exports = (robot) ->
   robot.hear /\bdemeter\b/i, (msg) ->
     msg.send "http://i.imgur.com/Z0jvLNm.jpg" # say demeter one more time
 
+  robot.hear /\b(wub ?(wub)?|dub(step)?|drop.*base|)\b/i, (msg) ->
+    wubs = [
+      "http://s3-ec.buzzfed.com/static/enhanced/webdr03/2013/2/15/9/anigif_enhanced-buzz-27236-1360939858-5.gif"
+      "http://s3-ec.buzzfed.com/static/enhanced/webdr01/2013/2/15/9/anigif_enhanced-buzz-5139-1360939681-14.gif"
+      "http://s3-ec.buzzfed.com/static/enhanced/webdr02/2013/2/15/11/enhanced-buzz-3235-1360947432-2.jpg"
+      "http://i1212.photobucket.com/albums/cc460/bbtlv/dubstep.gif"
+      "http://i.imgur.com/kUtovs7.gif"
+    ]
+    msg.send msg.random wubs
+
   robot.hear /\b(mad|angry|rage)\b/i, (msg) ->
     mads = [ "http://24.media.tumblr.com/e48acd4c34a62200a81df7259ab31d57/tumblr_n2kygg41US1rzgx44o1_400.gif",
       "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg" ]
