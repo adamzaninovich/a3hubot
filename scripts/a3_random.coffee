@@ -50,7 +50,7 @@ module.exports = (robot) ->
   robot.respond /a?re? y?o?u drunk/i, (msg) ->
     msg.send "http://i.imgur.com/6soruXq.jpg" # drunk robot is drunk
 
-  robot.respond /download( more) ram/i, (msg) ->
+  robot.respond /download( more)? ram/i, (msg) ->
     msg.send "downloading all the RAMs..."
 
   robot.respond /do (yo)?u work( )?out/i, (msg) ->
