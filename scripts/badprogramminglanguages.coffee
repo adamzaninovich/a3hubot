@@ -25,5 +25,6 @@ module.exports = (robot) ->
     quotes = [
       "> Vimscript is a rabbit hole of sadness and despair.\n- Steve Losh"
       "> The worst part about writing Vim plugins is, without a doubt, dealing with Vimscript. It’s an esoteric language that’s grown organically over the years seemingly without any strong design direction.\n- Steve Losh"
+      "> The [vimscript] syntax is terse, ugly and inconsistent. Is `\" foo` a comment? Sometimes.\n- Steve Losh"
     ]
     msg.send msg.random(quotes)
