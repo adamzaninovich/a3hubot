@@ -16,7 +16,7 @@ module.exports = (robot) ->
   robot.hear /\bdemeter\b/i, (msg) ->
     msg.send "http://i.imgur.com/Z0jvLNm.jpg" # say demeter one more time
 
-  robot.hear /\b(wub ?(wub)?|dub(step)?|drop.*base|)\b/i, (msg) ->
+  robot.hear /\b(wub ?(wub)?|dub(step)?|d+rop.*bas(s|e))\b/i, (msg) -> # ddddddrop the bass
     wubs = [
       "http://s3-ec.buzzfed.com/static/enhanced/webdr03/2013/2/15/9/anigif_enhanced-buzz-27236-1360939858-5.gif"
       "http://s3-ec.buzzfed.com/static/enhanced/webdr01/2013/2/15/9/anigif_enhanced-buzz-5139-1360939681-14.gif"
