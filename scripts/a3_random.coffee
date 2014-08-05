@@ -31,9 +31,6 @@ module.exports = (robot) ->
       "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg" ]
     msg.send msg.random mads
 
-  robot.hear /\bjavascript\b/i, (msg) ->
-    msg.send "http://i.imgur.com/0zJMrpi.jpg"
-
   robot.hear /\bnope\b/i, (msg) ->
     nopes = ["http://i.imgur.com/yBE4JbR.jpg", "http://i.imgur.com/DgczUtV.png"]
     msg.send msg.random nopes # nope nope nope

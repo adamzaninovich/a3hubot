@@ -19,5 +19,5 @@ all_seals = [
 ]
 
 module.exports = (robot) ->
-  robot.respond /(its )?approve( it)?/i, (msg) -> msg.send msg.random all_seals
+  robot.respond /(it's )?approved?( it)?/i, (msg) -> msg.send msg.random all_seals
 
