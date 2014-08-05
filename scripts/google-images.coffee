@@ -29,7 +29,7 @@ module.exports = (robot) ->
         msg.send "#{mustachify}#{url}"
 
 imageMe = (msg, query, animated, faces, cb) ->
-  query = "unicorn #{query}" if (new Date).getDay() is 2
+  query = "unicorn #{query}" if (new Date).getHours() in [0..1]
   cb = animated if typeof animated == 'function'
   cb = faces if typeof faces == 'function'
   q = v: '1.0', rsz: '8', q: query, safe: 'active'
