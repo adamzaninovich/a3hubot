@@ -5,6 +5,9 @@
 
 module.exports = (robot) ->
 
+  robot.hear /\b((hey|hay) ?){3}\b/i, (msg) ->
+    msg.send "http://i.imgur.com/4gNp09V.gif"
+
   robot.hear /\bright on,? right on\b/i, (msg) ->
     msg.send "https://www.youtube.com/watch?v=QZE3STUXphM"
 
