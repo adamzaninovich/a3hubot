@@ -79,3 +79,6 @@ module.exports = (robot) ->
     things = ["special", "clever", "crazy", "silly"]
     msg.send "oh you so #{msg.random things}"
 
+  robot.hear /\bmind blown\b/i, (msg) ->
+    msg.send "http://www.ripcitybadboys.com/wp-content/uploads/2014/02/mind-blown-2.gif" # mind blown
+
