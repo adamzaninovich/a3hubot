@@ -31,7 +31,8 @@ module.exports = (robot) ->
 
   robot.hear /\b(mad|angry|rage)\b/i, (msg) ->
     mads = [ "http://24.media.tumblr.com/e48acd4c34a62200a81df7259ab31d57/tumblr_n2kygg41US1rzgx44o1_400.gif",
-      "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg" ]
+      "http://i1248.photobucket.com/albums/hh490/Andrea2awesome/internet-memes-y-u-mad-tho.jpg"
+      "http://i.imgur.com/KEh9WOT.png" ]
     msg.send msg.random mads
 
   robot.hear /\bnope\b/i, (msg) ->
