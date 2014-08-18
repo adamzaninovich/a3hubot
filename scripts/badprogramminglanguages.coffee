@@ -10,6 +10,7 @@ module.exports = (robot) ->
       "> Java is sort of the COBOL of the 21st century, I think. It's heavyweight, verbose, and everyone loves to hate it, though not everyone will admit that.\n- Larry Wall"
       "> Using Java for serious jobs is like trying to take the skin off a rice pudding wearing boxing gloves.\n- Tel Hudson"
       "> If Java had true garbage collection, most programs would delete themselves upon execution.\n- Robert Sewell"
+      "> Java's fast... after a 12 minute running head start\n- Devin Clark"
     ]
     msg.send msg.random(quotes)
 
