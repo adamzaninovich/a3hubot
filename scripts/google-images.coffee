@@ -29,7 +29,7 @@ module.exports = (robot) ->
         msg.send "#{mustachify}#{url}"
 
 imageMe = (msg, query, animated, faces, cb) ->
-  if /b ?r ?o ?n( ?y| ?i ?e ?s)/i.test(query)
+  if /b.*r.*o.*n(.*y|.*i.*e.*s)/i.test(query)
     msg.send "Fuck your bronies"
     return
   query = "unicorn #{query}" if (new Date).getHours() in [0..1]
@@ -45,5 +45,8 @@ imageMe = (msg, query, animated, faces, cb) ->
       images = images.responseData?.results
       if images?.length > 0
         image  = msg.random images
+        if /b.*r.*o.*n(.*y|.*i.*e.*s)/i.test(image.unescapedUrl)
+          msg.send "That was close, it almost got through. In any case, fuck your bronies!"
+          return
         cb "#{image.unescapedUrl}#.png"
 
