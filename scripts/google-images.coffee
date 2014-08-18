@@ -29,7 +29,7 @@ module.exports = (robot) ->
         msg.send "#{mustachify}#{url}"
 
 imageMe = (msg, query, animated, faces, cb) ->
-  if /bron(y|ies)/i.test(query)
+  if /b ?r ?o ?n( ?y| ?i ?e ?s)/i.test(query)
     msg.send "Fuck your bronies"
     return
   query = "unicorn #{query}" if (new Date).getHours() in [0..1]
