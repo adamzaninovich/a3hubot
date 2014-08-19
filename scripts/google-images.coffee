@@ -29,8 +29,7 @@ module.exports = (robot) ->
         msg.send "#{mustachify}#{url}"
 
 imageMe = (msg, query, animated, faces, cb) ->
-  return if /(br|p)on(ies|y)/i.test(query)
-  query = "unicorn #{query}" if (new Date).getHours() === 0
+  query = "unicorn #{query}" if (new Date).getHours() is 0
   cb = animated if typeof animated == 'function'
   cb = faces if typeof faces == 'function'
   q = v: '1.0', rsz: '8', q: query, safe: 'active'
@@ -43,5 +42,12 @@ imageMe = (msg, query, animated, faces, cb) ->
       images = images.responseData?.results
       if images?.length > 0
         image  = msg.random images
-        cb "#{image.unescapedUrl}#.png"
+        cb ensureImageExtension image.unescapedUrl
+
+ensureImageExtension = (url) ->
+  ext = url.split('.').pop()
+  if /(png|jpe?g|gif)/i.test(ext)
+    url
+  else
+    "#{url}#.png"
 
