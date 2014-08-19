@@ -29,10 +29,8 @@ module.exports = (robot) ->
         msg.send "#{mustachify}#{url}"
 
 imageMe = (msg, query, animated, faces, cb) ->
-  if /(.*b.*r|.*p).*o.*n(.*y|.*i.*e.*s)|(.*y|.*s.*e.*i)n.*o(.*r.*b|.*p)/i.test(query)
-    msg.send "Fuck your bronies"
-    return
-  query = "unicorn #{query}" if (new Date).getHours() in [0..1]
+  return if /(br|p)on(ies|y)/i.test(query)
+  query = "unicorn #{query}" if (new Date).getHours() === 0
   cb = animated if typeof animated == 'function'
   cb = faces if typeof faces == 'function'
   q = v: '1.0', rsz: '8', q: query, safe: 'active'
@@ -45,8 +43,5 @@ imageMe = (msg, query, animated, faces, cb) ->
       images = images.responseData?.results
       if images?.length > 0
         image  = msg.random images
-        if /(.*b.*r|.*p).*o.*n(.*y|.*i.*e.*s)|(.*y|.*s.*e.*i)n.*o(.*r.*b|.*p)/i.test(image.unescapedUrl)
-          msg.send "That was close, it almost got through. In any case, fuck your bronies!"
-          return
         cb "#{image.unescapedUrl}#.png"
 
